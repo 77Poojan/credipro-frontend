@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = function override(config) {
   const fallback = config.resolve.fallback || {};
@@ -15,5 +16,9 @@ module.exports = function override(config) {
       Buffer: ['buffer', 'Buffer']
     })
   ]);
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    credipro: path.resolve(__dirname, 'src/lib/credipro.ts'),
+  };
   return config;
-}
+};

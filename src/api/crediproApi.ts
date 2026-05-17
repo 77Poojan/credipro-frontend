@@ -3,7 +3,7 @@
  * Typed API client for communicating with the Express backend
  */
 
-const API_BASE_URL = 'http://localhost:3001';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 const AUTH_TOKEN = 'mvp-demo-token';
 
 /**
